@@ -31,11 +31,6 @@ submit_btn = WebDriverWait(driver,20).until(EC.element_to_be_clickable(
     (By.XPATH, '/html/body/div/div[1]/div/div/div[10]/div[1]/form/div[2]/div[3]/button')))
 submit_btn.click()
 
-# wait until Thank you popup is visible and verify its text
-pop_up = WebDriverWait(driver,20).until(EC.visibility_of_element_located(
-    (By.ID, 'tildaformsuccesspopuptext')))
-assert pop_up.text == "Thank you! We will contact you soon."
-
 # find close popup button and click
 close_popup = WebDriverWait(driver,20).until(EC.element_to_be_clickable(
     (By.XPATH, '/html/body/div[2]/div/div/svg[1]')))
